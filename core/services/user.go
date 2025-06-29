@@ -14,6 +14,4 @@ type UserService interface {
 	UpdateUser(id string, payload models.SrvUpdateUserModel) (result models.Response)
 
 	DeleteUser(id string) (result models.Response)
-
-	CountUser() (result models.Response)
 }

@@ -282,22 +282,3 @@ func (s *userSrv) DeleteUser(id string) (result models.Response) {
 	}
 	return result
 }
-
-func (s *userSrv) CountUser() (result models.Response) {
-	res, err := s.userRepo.CountUser()
-	if err != nil {
-		return models.Response{
-			Status:  false,
-			Message: err.Error(),
-			Code:    400,
-			Data:    nil,
-		}
-	}
-	result = models.Response{
-		Status:  true,
-		Message: "count user success",
-		Code:    200,
-		Data:    res,
-	}
-	return result
-}

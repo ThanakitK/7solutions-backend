@@ -47,12 +47,12 @@ func main() {
 		}
 	}(userRepo)
 
-	app.Post("/signin", userHand.SignIn)
-	app.Post("/user", middlewares.AccessToken, userHand.CreateUser)
-	app.Get("/user/:id", middlewares.AccessToken, userHand.GetUserByID)
-	app.Get("/users", middlewares.AccessToken, userHand.GetUsers)
-	app.Put("/user/:id", middlewares.AccessToken, userHand.UpdateUser)
-	app.Delete("/user/:id", middlewares.AccessToken, userHand.DeleteUser)
+	app.Post("/api/signin", userHand.SignIn)
+	app.Post("/api/create-user", userHand.CreateUser)
+	app.Get("/api/user/:id", middlewares.AccessToken, userHand.GetUserByID)
+	app.Get("/api/users", middlewares.AccessToken, userHand.GetUsers)
+	app.Put("/api/user/:id", middlewares.AccessToken, userHand.UpdateUser)
+	app.Delete("/api/user/:id", middlewares.AccessToken, userHand.DeleteUser)
 
 	app.Listen(":" + config.Env.Port)
 }
